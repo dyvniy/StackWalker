@@ -1420,5 +1420,11 @@ void StackWalker::OnSymInit(LPCSTR szSearchPath, DWORD symOptions, LPCSTR szUser
 
 void StackWalker::OnOutput(LPCSTR buffer)
 {
+  /*
   OutputDebugStringA(buffer);
+  /*/
+  FILE* f = fopen("C:\\ProgramData\\trace_log.txt", "a");
+  fprintf(f, buffer);
+  fclose(f);
+  //*/
 }

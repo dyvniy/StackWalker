@@ -218,8 +218,15 @@ int f(int i)
 }
 #endif  // EXCEPTION_FILTER_TEST
 
+int sum09(int a, int b) {
+  return a + b + 9;
+}
+#undef sum09
+
 int _tmain(int argc, _TCHAR* argv[])
 {
+  sum09(2, 3);
+
   printf("\n\n\nShow an object:\n\n\n");
   GlobalIntTest();
 
